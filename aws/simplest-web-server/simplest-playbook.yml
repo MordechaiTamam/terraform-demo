@@ -1,0 +1,10 @@
+- name: Data Manipulation
+  hosts: all
+  gather_facts: true
+  vars:
+   my_name: devops-expert
+   ansible_user: ec2-user
+  tasks:
+  - name: Install latest version of "python3.7"
+    shell: echo "<p> From Ansibleeeeee! </p>" >> /var/www/html/index.html
+    become_user: root

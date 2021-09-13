@@ -28,7 +28,10 @@ resource "aws_instance" "myInstance" {
 }
 
 resource "local_file" "ip" {
-    content  = aws_instance.myInstance.public_ip
+    content  = <<-EOT
+    [web-servers]
+    ${aws_instance.myInstance.public_ip} ansible_ssh_user=ec2-user
+    EOT
     filename = "ip.yml"
 }
 

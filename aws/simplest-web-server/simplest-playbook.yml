@@ -4,6 +4,11 @@
   vars:
    my_name: devops-expert
   tasks:
-  - name: Install latest version of "python3.7"
-    shell: echo "<p> From Ansibleeeeee! </p>" >> /var/www/html/index.html
+  - name: Install httpd
+    shell: |
+      yum -y install httpd
+      echo "<p> My Instance! </p>" >> /var/www/html/index.html
+      systemctl enable httpd
+      systemctl start httpd
+    become: yes
     become_user: root

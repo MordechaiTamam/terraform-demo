@@ -16,15 +16,6 @@ resource "aws_instance" "myInstance" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
   key_name = "ubuntu-devops-experts"
-  user_data     = <<-EOF
-                  #!/bin/bash
-                  sudo su
-                  yum -y install httpd
-                  echo "<p> My Instance! </p>" >> /var/www/html/index.html
-                  chmod 777 /var/www/html/index.html
-                  sudo systemctl enable httpd
-                  sudo systemctl start httpd
-                  EOF
 }
 
 resource "local_file" "ip" {

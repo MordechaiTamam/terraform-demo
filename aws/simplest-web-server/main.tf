@@ -16,6 +16,9 @@ resource "aws_instance" "myInstance" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
   key_name = "ubuntu-devops-experts"
+  tags = {
+    key ="my key"
+  }
 }
 
 resource "local_file" "ip" {

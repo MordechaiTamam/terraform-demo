@@ -3,7 +3,7 @@ provider "aws" {
 }
 terraform {
   backend "s3" {
-    bucket = "modi-terraform"
+    bucket = "modi-test-tf"
     key = "devops-experts/demo/backend/terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "terraform-up-and-running-locks"

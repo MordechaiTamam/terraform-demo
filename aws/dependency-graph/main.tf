@@ -1,6 +1,5 @@
 provider "aws" {
   region     = "us-east-1"
-  profile    = "terraform"
 }
 
 resource "aws_instance" "instance-1" {

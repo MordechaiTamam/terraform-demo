@@ -1,5 +1,5 @@
 provider "github" {
-  token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  token = "<ENTER-YOUR-TOKEN>"
 }
 
 resource "github_repository" "repo" {

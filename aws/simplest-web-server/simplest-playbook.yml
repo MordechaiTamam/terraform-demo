@@ -4,6 +4,14 @@
   vars:
    my_name: devops-expert
   tasks:
+  - name: will wait till reachable
+  hosts: all
+  gather_facts: no # important
+  tasks:
+  - name: Wait for system to become reachable
+    wait_for_connection:
+  - name: Gather facts for the first time
+    setup:
   - name: Install httpd
     shell: |
       yum -y install httpd
